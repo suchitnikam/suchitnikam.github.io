@@ -9,16 +9,5 @@ liveagent.showWhenOffline('5731N000000g6rF', document.getElementById('liveagent_
 <script type="text/javascript">// <![CDATA[
 liveagent.init('https://d.la1-c1-iad.salesforceliveagent.com/chat', '5731N000000g6rF', '00D3J0000001Jg7');
 // ]]></script>
-<script type="text/javascript">
- var chatNotStarted = true;
- function startAgent(e) {
- if(chatNotStarted) {
- liveagent.startChat('5731N000000g6rF');
- chatNotStarted = false;
- } else {
- alert('You already have a chat in progress');
- }
- }
-</script>
   </body>
 </html>
