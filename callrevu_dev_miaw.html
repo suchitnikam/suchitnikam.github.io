@@ -29,6 +29,15 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
+
+	// Custom code
+	window.addEventListener("onEmbeddedMessagingButtonCreated", (event) => {
+  	console.log("Received the onEmbeddedMessagingButtonCreated event…");
+  	console.log("Event detail: ", event.detail);
+
+  		// Do something...
+	});
+
 </script>
 <script type='text/javascript' src='https://callrevu--chatbotdev.sandbox.my.site.com/ESWSupportEnhance1738239793179/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
