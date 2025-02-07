@@ -26,13 +26,13 @@
 
 		window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
 			console.log("onEmbeddedMessagingConversationParticipantChanged... entry");
-			console.log("Event " +event);
-			console.log("event.detail " +event.detail);
-			console.log("event.detail.conversationEntry " +event.detail.conversationEntry);
-			console.log("event.detail.conversationEntry.entryPayload " +event.detail.conversationEntry.entryPayload);
+			console.log("Event " ,event);
+			console.log("event.detail " ,event.detail);
+			console.log("event.detail.conversationEntry " ,event.detail.conversationEntry);
+			console.log("event.detail.conversationEntry.entryPayload " ,event.detail.conversationEntry.entryPayload);
 			let entryPayloyConversation = JSON.parse(event.detail.conversationEntry.entryPayload);
-			console.log("entryPayloyConversation " +entryPayloyConversation);
-			console.log("entryPayloyConversation.entries[0].operation " +entryPayloyConversation.entries[0].operation);		  
+			console.log("entryPayloyConversation " ,entryPayloyConversation);
+			console.log("entryPayloyConversation.entries[0].operation " ,entryPayloyConversation.entries[0].operation);		  
 		
 		});
 
