@@ -9,12 +9,12 @@
 		border-radius: 8px 8px 0 0;
 	}
   </style>
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-				embedded_svc.settings.defaultMinimizedText = 'Lets Chat'; //(Defaults to Chat with an Expert)
+			
 			embeddedservice_bootstrap.init(
 				'00D8B000001Caen',
 				'Support_Enhance',
@@ -23,6 +23,20 @@
 					scrt2URL: 'https://callrevu--chatbotdev.sandbox.my.salesforce-scrt.com'
 				}
 			);
+
+		window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
+			console.log("onEmbeddedMessagingConversationParticipantChanged... entry");
+			console.log(event);
+			console.log(event.detail);
+			console.log(event.detail.conversationEntry);
+			console.log(event.detail.conversationEntry.entryPayload);
+			let entryPayloyConversation = JSON.parse(event.detail.conversationEntry.entryPayload);
+			console.log(entryPayloyConversation);
+			console.log(entryPayloyConversation.entries[0].operation);		  
+		
+		});
+
+		
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
