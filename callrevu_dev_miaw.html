@@ -40,6 +40,17 @@
 			console.log("entryPayloyConversation " ,entryPayloyConversation);
 			console.log("entryPayloyConversation.entries[0].operation " ,entryPayloyConversation.entries[0].operation);
 			console.log("participant.appType " ,entryPayloyConversation.entries[0].participant.appType);
+			if(entryPayloyConversation.entries[0].operation == 'remove') {
+				console.log("operation value:  remove");
+				
+				if(entryPayloyConversation.entries[0].participant.appType == 'chatbot') {
+					console.log("participant appType value:  chatbot");
+				}
+				else if(entryPayloyConversation.entries[0].participant.appType == 'agent') {
+					console.log("participant appType value:  agent");
+				}
+				
+			}
 		
 		});
 
