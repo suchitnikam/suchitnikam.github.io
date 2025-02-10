@@ -56,7 +56,7 @@
 
 		window.addEventListener("onEmbeddedMessagingConversationRouted", (event) => {
 			console.log("onEmbeddedMessagingConversationRouted... entry");
-			console.log("Event " ,event);
+			console.log("Event for conversion: " ,event.detail.conversationEntry.sender.appType);
 		});
 
 		
