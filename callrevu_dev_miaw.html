@@ -14,17 +14,10 @@
 		background-image:url(https://callrevu--chatbotdev.sandbox.my.salesforce.com/servlet/servlet.ImageServer?id=0158B000000nHn5&oid=00D8B000001Caen&lastMod=1721068300000);
 	}
 
-	.embedded-messaging-quick-reply {
-	}
 
-	
-
-	.embedded-messaging-chat-message[lwc-3cjfrt9r4ka] div.embedded-messaging-inbound-chat-message[lwc-3cjfrt9r4ka] {
-		background: #E9E8E8 !important;
-	   	font-weight: 400 !important;
-    		font-size: 14px !important;
-    		background: #E9E8E8 !important;
-	}
+	  div.embedded-messaging-inbound-chat-message:not(.custom_chat_message_bubble_component)[lwc-3cjfrt9r4ka] {
+		  background-color: #E9E8E8 !important;
+	  }
   </style>
 
 <script type='text/javascript'>
