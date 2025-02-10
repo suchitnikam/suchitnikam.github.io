@@ -37,17 +37,27 @@
 			// console.log("event.detail.conversationEntry " ,event.detail.conversationEntry);
 			// console.log("event.detail.conversationEntry.entryPayload " ,event.detail.conversationEntry.entryPayload);
 			let entryPayloyConversation = JSON.parse(event.detail.conversationEntry.entryPayload);
-			console.log("entryPayloyConversation: " ,entryPayloyConversation);
+			//console.log("entryPayloyConversation: " ,entryPayloyConversation);
 			console.log("entryPayloyConversation.entries[0].operation: " ,entryPayloyConversation.entries[0].operation);
-			console.log("participant.appType: " ,entryPayloyConversation.entries[0].participant.appType);
+			console.log("1 participant.appType: " ,entryPayloyConversation.entries[0].participant.appType);
 			if(entryPayloyConversation.entries[0].operation == 'remove') {
-				console.log("operation value:  remove");
+				console.log("2 operation value:  remove");
 				
 				if(entryPayloyConversation.entries[0].participant.appType == 'chatbot') {
-					console.log("participant appType value:  chatbot");
+					console.log("3 participant appType value:  chatbot");
+					
+					window.addEventListener("onEmbeddedMessagingConversationRouted", (event2) => {
+						console.log("4 onEmbeddedMessagingConversationRouted... entry");
+						console.log("5 Event for conversion: " ,event2.detail.conversationEntry.sender.appType);
+					});
 				}
 				else if(entryPayloyConversation.entries[0].participant.appType == 'agent') {
-					console.log("participant appType value:  agent");
+					console.log("6 participant appType value:  agent");
+
+					window.addEventListener("onEmbeddedMessagingConversationRouted", (event3) => {
+						console.log("7 onEmbeddedMessagingConversationRouted... entry");
+						console.log("8 Event for conversion: " ,event3.detail.conversationEntry.sender.appType);
+					});
 				}
 				
 			}
