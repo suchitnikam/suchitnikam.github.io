@@ -43,10 +43,10 @@
 			if(entryPayloyConversation.entries[0].operation == 'remove' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
 				console.log("2 operation value:  remove");
 				
-				if(entryPayloyConversation.entries[0].participant.appType == 'chatbot') {
+				if(entryPayloyConversation.entries[0].participant.appType == 'chatbot' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
 					console.log("3 participant appType value:  chatbot"); // chatbot assist left here when case and bot rating done.
 					// we can add here end chat button operation. 
-					document.getElementById('endChatOptionButton-26').click();
+					//document.getElementById('endChatOptionButton-26').click();
 				}
 			}
 
