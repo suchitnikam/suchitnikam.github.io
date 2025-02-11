@@ -25,7 +25,7 @@
 			);
 
 		window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
-			let transferToAgent = false;
+			let flag = false;
 			// console.log("onEmbeddedMessagingConversationParticipantChanged... entry");
 			// console.log("Event " ,event);
 			// console.log("event.detail " ,event.detail);
@@ -41,18 +41,18 @@
 				if(entryPayloyConversation.entries[0].participant.appType == 'chatbot' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
 					console.log("3 participant appType value:  chatbot"); // chatbot assist left here when case and bot rating done.
 					// we can add here end chat button operation. 
-					transferToAgent = false;
+					flag = true;
 				}
 			}
 
 			if(entryPayloyConversation.entries[0].operation == 'add' && entryPayloyConversation.entries[0].participant.appType == 'agent') {
 				
 					console.log("4 participant appType value:  agent");
-					transferToAgent = true;
+					flag = false;
 			}
 
-			if(transferToAgent === false) {
-				console.log("5 transferToAgent", transferToAgent);
+			if(flag && entryPayloyConversation.entries[0].operation != 'add' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
+				console.log("5 flag", flag);
 			}
 		
 		});
