@@ -64,7 +64,9 @@
 
 		window.addEventListener("onEmbeddedMessagingConversationRouted", (event) => {
 			console.log("11 onEmbeddedMessagingConversationRouted... entry");
-			console.log("22 Event for conversion: " ,event.detail.conversationEntry.sender.appType);
+			let entryPayloyConversation = JSON.parse(event.detail.conversationEntry);
+			console.log("22 entryPayloyConversation: " ,entryPayloyConversation);
+			console.log("33 Event for conversion: " ,event.detail.conversationEntry.sender.appType);
 		});
 
 		
