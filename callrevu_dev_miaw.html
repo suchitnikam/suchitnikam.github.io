@@ -59,34 +59,29 @@
 				console.log("1 participant.appType: " ,entryPayloyConversation.entries[0].participant.appType);
 				if(entryPayloyConversation.entries[0].operation == 'remove' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
 					console.log("2 operation value:  remove");
+					flag = true;
+					console.log("flag value ==> " ,flag);
+					console.log("conversionRouingTypeFlage value ==> " ,conversionRouingTypeFlage);
 					
-					// if(entryPayloyConversation.entries[0].participant.appType == 'chatbot' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
-						// console.log("3 participant appType value:  chatbot"); // chatbot assist left here when case and bot rating done.
-						// we can add here end chat button operation. 
-						flag = true;
-					// }
+					// need to handle end chat button click operation.
+					if(flag == true && conversionRouingTypeFlage == true) {
+						console.log("<== if condition entry ==> ");
+					}
+					
 				}
 	
-				// if(entryPayloyConversation.entries[0].operation == 'add' && entryPayloyConversation.entries[0].participant.appType == 'agent') {
-					
-				// 		console.log("4 participant appType value:  agent");
-				// 		flag = false;
-				// }
-	
-				// if(flag && entryPayloyConversation.entries[0].operation != 'add' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
-				// 	console.log("5 flag", flag);
-				// }
+				
 			
 			});
 			
 			
-			console.log("flag value ==> " ,flag);
-			console.log("conversionRouingTypeFlage value ==> " ,conversionRouingTypeFlage);
+			// console.log("flag value ==> " ,flag);
+			// console.log("conversionRouingTypeFlage value ==> " ,conversionRouingTypeFlage);
 			
-			// need to handle end chat button click operation.
-			if(flag == true && conversionRouingTypeFlage == true) {
-				console.log("<== if condition entry ==> ");
-			}
+			// // need to handle end chat button click operation.
+			// if(flag == true && conversionRouingTypeFlage == true) {
+			// 	console.log("<== if condition entry ==> ");
+			// }
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
