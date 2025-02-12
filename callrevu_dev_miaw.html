@@ -62,10 +62,10 @@
 		
 		});
 
-		// window.addEventListener("onEmbeddedMessagingConversationRouted", (event) => {
-		// 	console.log("onEmbeddedMessagingConversationRouted... entry");
-		// 	console.log("Event for conversion: " ,event.detail.conversationEntry.sender.appType);
-		// });
+		window.addEventListener("onEmbeddedMessagingConversationRouted", (event) => {
+			console.log("11 onEmbeddedMessagingConversationRouted... entry");
+			console.log("22 Event for conversion: " ,event.detail.conversationEntry.sender.appType);
+		});
 
 		
 		} catch (err) {
