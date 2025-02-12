@@ -62,11 +62,11 @@
 		
 		});
 
-		window.addEventListener("onEmbeddedMessagingConversationRouted", (event) => {
+		window.addEventListener("onEmbeddedMessagingConversationRouted", (event1) => {
 			console.log("11 onEmbeddedMessagingConversationRouted... entry");
-			let entryPayloyConversation = JSON.parse(event.detail.conversationEntry);
-			console.log("22 onEmbeddedMessagingConversationRouted event: " ,event);
-			console.log("33 Event for conversion: " ,event.detail.conversationEntry.sender.appType);
+			//let entryPayloyConversation = JSON.parse(event.detail.conversationEntry);
+			console.log("22 onEmbeddedMessagingConversationRouted event: " ,event1);
+			console.log("33 Event for conversion: " ,event1.detail.conversationEntry.sender.appType);
 		});
 
 		
