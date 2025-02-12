@@ -28,9 +28,9 @@
 					scrt2URL: 'https://callrevu--chatbotdev.sandbox.my.salesforce-scrt.com'
 				}
 			);
-
+		let flag = false;
 		window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
-			let flag = false;
+			
 			// console.log("onEmbeddedMessagingConversationParticipantChanged... entry");
 			// console.log("Event " ,event);
 			// console.log("event.detail " ,event.detail);
@@ -43,35 +43,45 @@
 			if(entryPayloyConversation.entries[0].operation == 'remove' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
 				console.log("2 operation value:  remove");
 				
-				if(entryPayloyConversation.entries[0].participant.appType == 'chatbot' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
-					console.log("3 participant appType value:  chatbot"); // chatbot assist left here when case and bot rating done.
+				// if(entryPayloyConversation.entries[0].participant.appType == 'chatbot' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
+					// console.log("3 participant appType value:  chatbot"); // chatbot assist left here when case and bot rating done.
 					// we can add here end chat button operation. 
 					flag = true;
-				}
+				// }
 			}
 
-			if(entryPayloyConversation.entries[0].operation == 'add' && entryPayloyConversation.entries[0].participant.appType == 'agent') {
+			// if(entryPayloyConversation.entries[0].operation == 'add' && entryPayloyConversation.entries[0].participant.appType == 'agent') {
 				
-					console.log("4 participant appType value:  agent");
-					flag = false;
-			}
+			// 		console.log("4 participant appType value:  agent");
+			// 		flag = false;
+			// }
 
-			if(flag && entryPayloyConversation.entries[0].operation != 'add' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
-				console.log("5 flag", flag);
-			}
+			// if(flag && entryPayloyConversation.entries[0].operation != 'add' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
+			// 	console.log("5 flag", flag);
+			// }
 		
 		});
-
+		let conversionRouingTypeFlage = false;
 		window.addEventListener("onEmbeddedMessagingConversationRouted", (event1) => {
 			console.log("11 onEmbeddedMessagingConversationRouted... entry");
 			let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);
-			console.log("22 onEmbeddedMessagingConversationRouted event: " ,event1);
-			console.log("33 Event for conversion: " ,event1.detail.conversationEntry.entryPayload);
-			console.log("44 Event for conversion: " ,entryPayloyConversation);
+			// console.log("22 onEmbeddedMessagingConversationRouted event: " ,event1);
+			// console.log("33 Event for conversion: " ,event1.detail.conversationEntry.entryPayload);
+			// console.log("44 Event for conversion: " ,entryPayloyConversation);
 			console.log("55 routingType: " ,entryPayloyConversation.routingType);
+			if(entryPayloyConversation.routingType == 'Initial') {
+				conversionRouingTypeFlage = true;
+			}
+			else if(entryPayloyConversation.routingType == 'Transfer') {
+				conversionRouingTypeFlage = false;
+			}
 		});
-
-		
+		console.log("flag value ==> " ,flag);
+		console.log("conversionRouingTypeFlage value ==> " ,conversionRouingTypeFlage);
+		// need to handle end chat button click operation.
+		if(flag == true && conversionRouingTypeFlage == true) {
+			console.log("<== if condition entry ==> ");
+		}
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
