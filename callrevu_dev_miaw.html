@@ -17,6 +17,19 @@
 
 <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <script type='text/javascript'>
+	function endChat() {
+		console.log("enter window.onload function ==> ");
+  		//document.getElementById('clickButton').click();
+		// var btn = document.getElementById('endChatOptionText-26');
+		// console.log("button value ==> ", btn);
+		// btn.click;
+		//$(document).ready(function() {
+			console.log("document ready function ==> ");
+			//$('#endChatOptionButton-26').click();
+			$('.endChatOption').click();
+		//});
+	}
+	
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
@@ -106,18 +119,7 @@
 		}
 	};
 
-	function endChat() {
-		console.log("enter window.onload function ==> ");
-  		//document.getElementById('clickButton').click();
-		// var btn = document.getElementById('endChatOptionText-26');
-		// console.log("button value ==> ", btn);
-		// btn.click;
-		//$(document).ready(function() {
-			console.log("document ready function ==> ");
-			//$('#endChatOptionButton-26').click();
-			$('.endChatOption').click();
-		//});
-	}
+	
 </script>
 <script type='text/javascript' src='https://callrevu--chatbotdev.sandbox.my.site.com/ESWSupportEnhance1738239793179/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
