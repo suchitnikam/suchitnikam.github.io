@@ -46,7 +46,17 @@
 			});
 			
 			let flag = false;
+			//-----------
 			let endChatFlag = false;
+			console.log("endChatFlag value ==> ", endChatFlag);
+			if(endChatFlag == true) {
+				console.log("<== enter endChatFlag if condition ==> ");
+				window.onload = function() {
+					console.log("enter window.onload function ==> ");
+  					document.getElementById('clickButton').click();
+				}
+			}
+			//-----------
 			window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
 				
 				// console.log("onEmbeddedMessagingConversationParticipantChanged... entry");
@@ -87,14 +97,7 @@
 			// if(flag == true && conversionRouingTypeFlage == true) {
 			// 	console.log("<== if condition entry ==> ");
 			// }
-			console.log("endChatFlag value ==> ", endChatFlag);
-			if(endChatFlag == true) {
-				console.log("<== enter endChatFlag if condition ==> ");
-				window.onload = function() {
-					console.log("enter window.onload function ==> ");
-  					document.getElementById('clickButton').click();
-				}
-			}
+			
 			
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
