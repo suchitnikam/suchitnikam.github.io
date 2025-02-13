@@ -108,9 +108,17 @@
 	function endChat() {
 		console.log("enter window.onload function ==> ");
   		//document.getElementById('clickButton').click();
-		var btn = document.getElementById('endChatOptionText-26');
-		console.log("button value ==> ", btn);
-		btn.click;
+		// var btn = document.getElementById('endChatOptionText-26');
+		// console.log("button value ==> ", btn);
+		// btn.click;
+		document.addEventListener('DOMContentLoaded', function () {
+		    const element = document.getElementById('endChatOptionButton-26');
+		    if (element !== null) {
+		        element.click();
+		    } else {
+		        console.error("Element not found");
+		    }
+		});
 	}
 </script>
 <script type='text/javascript' src='https://callrevu--chatbotdev.sandbox.my.site.com/ESWSupportEnhance1738239793179/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
