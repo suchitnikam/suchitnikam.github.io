@@ -49,13 +49,13 @@
 			//-----------
 			let endChatFlag = false;
 			console.log("endChatFlag value ==> ", endChatFlag);
-			if(endChatFlag == true) {
-				console.log("<== enter endChatFlag if condition ==> ");
-				window.onload = function() {
-					console.log("enter window.onload function ==> ");
-  					document.getElementById('clickButton').click();
-				}
-			}
+			// if(endChatFlag == true) {
+			// 	console.log("<== enter endChatFlag if condition ==> ");
+			// 	window.onload = function() {
+			// 		console.log("enter window.onload function ==> ");
+  	// 				document.getElementById('clickButton').click();
+			// 	}
+			// }
 			//-----------
 			window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
 				
@@ -81,6 +81,7 @@
 						// btn.click();
 						//document.querySelectorAll(".endChatOption")[0].click();
 						endChatFlag = true;
+						endChat();
 					}
 					
 				}
@@ -103,6 +104,13 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
+
+	window.onload = function endChat() {
+		console.log("enter window.onload function ==> ");
+  		//document.getElementById('clickButton').click();
+		var btn = document.getElementById('clickButton');
+		console.log("button value ==> ", btn);
+	}
 </script>
 <script type='text/javascript' src='https://callrevu--chatbotdev.sandbox.my.site.com/ESWSupportEnhance1738239793179/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
