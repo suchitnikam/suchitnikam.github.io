@@ -24,11 +24,17 @@
 	// 	// var btn = document.getElementById('endChatOptionText-26');
 	// 	// console.log("button value ==> ", btn);
 	// 	// btn.click;
+
+		window.onload = function () {
+		        var linkList = document.getElementById("headerButton menuButton slds-button slds-button_icon slds-button_icon-bare slds-button_icon-inverse");
+		        linkList.setAttribute("aria-expanded", "true");
+			document.getElementById('endChatOptionText-26').click();
+		};
 		$(document).ready(function() {
 	// 		console.log("document ready function ==> ");
 	// 		//$('#endChatOptionButton-26').click();
 	// 		//$('.endChatOption').click();
-				//$(".chatOverlay").removeAttr("style");
+				$("headerMenuButton-26").removeAttr("style");
 				//$(".chatOverlay").css({'display' : '' });
 				$("#headerMenuButton-26").click();
 			 	 $("#endChatOptionButton-26").click();
