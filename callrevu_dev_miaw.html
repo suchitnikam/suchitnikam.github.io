@@ -25,16 +25,13 @@
 	// 	// console.log("button value ==> ", btn);
 	// 	// btn.click;
 
-		window.onload = function () {
-		        var linkList = document.getElementById("headerButton");
-		        linkList.setAttribute("aria-expanded", "true");
-			document.getElementById('endChatOptionText-26').click();
-		};
+
 		$(document).ready(function() {
 	// 		console.log("document ready function ==> ");
 	// 		//$('#endChatOptionButton-26').click();
 	// 		//$('.endChatOption').click();
-				$("headerMenuButton-26").removeAttr("style");
+				// $("headerMenuButton-26").removeAttr("style");
+			$(".headerButton").attr("aria-expanded","true");
 				//$(".chatOverlay").css({'display' : '' });
 				$("#headerMenuButton-26").click();
 			 	 $("#endChatOptionButton-26").click();
