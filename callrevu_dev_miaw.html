@@ -48,26 +48,27 @@
 				}
 			);
 
-			window.addEventListener("onEmbeddedMessagingConversationStarted", (event2) => {
-				console.log("111 onEmbeddedMessagingConversationStarted... entry", event2);
-				//let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);
-			});
+			// window.addEventListener("onEmbeddedMessagingConversationStarted", (event2) => {
+			// 	console.log("111 onEmbeddedMessagingConversationStarted... entry", event2);
+			// 	//let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);conversationId
+			// 	console.log("222 conversationId value ==>", event2.detail.conversationId);
+			// });
 			
-			let conversionRouingTypeFlage = false;
-			window.addEventListener("onEmbeddedMessagingConversationRouted", (event1) => {
-				console.log("11 onEmbeddedMessagingConversationRouted... entry");
-				let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);
-				// console.log("22 onEmbeddedMessagingConversationRouted event: " ,event1);
-				// console.log("33 Event for conversion: " ,event1.detail.conversationEntry.entryPayload);
-				console.log("44 Event for conversion: " ,entryPayloyConversation);
-				console.log("55 routingType: " ,entryPayloyConversation.routingType);
-				if(entryPayloyConversation.routingType == 'Initial') {
-					conversionRouingTypeFlage = true;
-				}
-				else if(entryPayloyConversation.routingType == 'Transfer') {
-					conversionRouingTypeFlage = false;
-				}
-			});
+			// let conversionRouingTypeFlage = false;
+			// window.addEventListener("onEmbeddedMessagingConversationRouted", (event1) => {
+			// 	console.log("11 onEmbeddedMessagingConversationRouted... entry");
+			// 	let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);
+			// 	// console.log("22 onEmbeddedMessagingConversationRouted event: " ,event1);
+			// 	// console.log("33 Event for conversion: " ,event1.detail.conversationEntry.entryPayload);
+			// 	console.log("44 Event for conversion: " ,entryPayloyConversation);
+			// 	console.log("55 routingType: " ,entryPayloyConversation.routingType);
+			// 	if(entryPayloyConversation.routingType == 'Initial') {
+			// 		conversionRouingTypeFlage = true;
+			// 	}
+			// 	else if(entryPayloyConversation.routingType == 'Transfer') {
+			// 		conversionRouingTypeFlage = false;
+			// 	}
+			// });
 			
 			let flag = false;
 			//-----------
@@ -81,38 +82,38 @@
 			// 	}
 			// }
 			//-----------
-			window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
+			// window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
 				
-				// console.log("onEmbeddedMessagingConversationParticipantChanged... entry");
-				// console.log("Event " ,event);
-				// console.log("event.detail " ,event.detail);
-				// console.log("event.detail.conversationEntry " ,event.detail.conversationEntry);
-				// console.log("event.detail.conversationEntry.entryPayload " ,event.detail.conversationEntry.entryPayload);
-				let entryPayloyConversation = JSON.parse(event.detail.conversationEntry.entryPayload);
-				console.log("entryPayloyConversation: " ,entryPayloyConversation);
-				console.log("0 entryPayloyConversation.entries[0].operation: " ,entryPayloyConversation.entries[0].operation);
-				console.log("1 participant.appType: " ,entryPayloyConversation.entries[0].participant.appType);
-				if(entryPayloyConversation.entries[0].operation == 'remove' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
-					console.log("2 operation value:  remove");
-					flag = true;
-					console.log("flag value ==> " ,flag);
-					console.log("conversionRouingTypeFlage value ==> " ,conversionRouingTypeFlage);
+			// 	// console.log("onEmbeddedMessagingConversationParticipantChanged... entry");
+			// 	// console.log("Event " ,event);
+			// 	// console.log("event.detail " ,event.detail);
+			// 	// console.log("event.detail.conversationEntry " ,event.detail.conversationEntry);
+			// 	// console.log("event.detail.conversationEntry.entryPayload " ,event.detail.conversationEntry.entryPayload);
+			// 	let entryPayloyConversation = JSON.parse(event.detail.conversationEntry.entryPayload);
+			// 	console.log("entryPayloyConversation: " ,entryPayloyConversation);
+			// 	console.log("0 entryPayloyConversation.entries[0].operation: " ,entryPayloyConversation.entries[0].operation);
+			// 	console.log("1 participant.appType: " ,entryPayloyConversation.entries[0].participant.appType);
+			// 	if(entryPayloyConversation.entries[0].operation == 'remove' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
+			// 		console.log("2 operation value:  remove");
+			// 		flag = true;
+			// 		console.log("flag value ==> " ,flag);
+			// 		console.log("conversionRouingTypeFlage value ==> " ,conversionRouingTypeFlage);
 					
-					// need to handle end chat button click operation.
-					if(flag == true && conversionRouingTypeFlage == true) {
-						console.log("<== if condition entry ==> ");
-						// var btn = document.getElementById("endChatOptionButton-26");
-						// btn.click();
-						//document.querySelectorAll(".endChatOption")[0].click();
-						endChatFlag = true;
-						endChat();
-					}
+			// 		// need to handle end chat button click operation.
+			// 		if(flag == true && conversionRouingTypeFlage == true) {
+			// 			console.log("<== if condition entry ==> ");
+			// 			// var btn = document.getElementById("endChatOptionButton-26");
+			// 			// btn.click();
+			// 			//document.querySelectorAll(".endChatOption")[0].click();
+			// 			endChatFlag = true;
+			// 			endChat();
+			// 		}
 					
-				}
+			// 	}
 	
 				
 			
-			});
+			// });
 			
 			// document.getElementById("endChatOptionButton-26").click();
 			// console.log("flag value ==> " ,flag);
