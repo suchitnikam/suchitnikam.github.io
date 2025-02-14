@@ -41,11 +41,14 @@
 			 	 $("#endChatOptionButton-26").click();
 	//});
 
-		//---
-		// var r= $('<button role="menuitem" class="endChatOption" tabindex="-1" lwc-c5th8h1hm8="" id="endChatOptionButton-26"><span class="endChat slds-truncate" lwc-c5th8h1hm8="" title="End chat" id="endChatOptionText-26">End chat</span></button>');
-  //       	$("body").append(r);
-		// $("#endChatOptionButton-26").click();
-		//---
+		$(document).ready(function() {
+			$("#embeddedMessagingFrame").on("load", function() {
+			    // var iframeContent = $(this).contents().find("#endChatOptionButton-26");
+				console.log('end chat button ==> ');
+			    // iframeContent.css("display", ""); // Example modification
+			});
+		});
+
 	}
 	
 	function initEmbeddedMessaging() {
@@ -120,13 +123,7 @@
 						//document.querySelectorAll(".endChatOption")[0].click();
 						endChatFlag = true;
 						endChat();
-						$(document).ready(function() {
-							$("#embeddedMessagingFrame").on("load", function() {
-							    // var iframeContent = $(this).contents().find("#endChatOptionButton-26");
-								console.log('end chat button ==> ');
-							    // iframeContent.css("display", ""); // Example modification
-							});
-						});
+						
 					}
 					
 				}
