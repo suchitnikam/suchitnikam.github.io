@@ -118,6 +118,10 @@
 						//document.querySelectorAll(".endChatOption")[0].click();
 						endChatFlag = true;
 						endChat();
+						$("#embeddedMessagingFrame").on("load", function() {
+						    var iframeContent = $(this).contents().find(".chatOverlay");
+						    iframeContent.css("display", ""); // Example modification
+						});
 					}
 					
 				}
