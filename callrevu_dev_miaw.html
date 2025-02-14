@@ -41,13 +41,18 @@
 			 	 $("#endChatOptionButton-26").click();
 	//});
 
-		$(document).ready(function() {
-			$("#embeddedMessagingFrame").on("load", function() {
-			    // var iframeContent = $(this).contents().find("#endChatOptionButton-26");
-				console.log('end chat button ==> ');
-			    // iframeContent.css("display", ""); // Example modification
+		document.addEventListener("onMessagingReady", function() {
+			    console.log("MIAW Messaging is ready!");
+			
+			    // Now we can safely end the conversation
+			    if (window.messagingClient && typeof window.messagingClient.endConversation === "function") {
+			        window.messagingClient.endConversation()
+			            .then(() => console.log("Chat session successfully ended."))
+			            .catch((error) => console.error("Error ending chat session:", error));
+			    } else {
+			        console.warn("endConversation is not available.");
+			    }
 			});
-		});
 
 	}
 	
