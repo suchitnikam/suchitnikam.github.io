@@ -54,7 +54,7 @@
 				let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);
 				// console.log("22 onEmbeddedMessagingConversationRouted event: " ,event1);
 				// console.log("33 Event for conversion: " ,event1.detail.conversationEntry.entryPayload);
-				// console.log("44 Event for conversion: " ,entryPayloyConversation);
+				console.log("44 Event for conversion: " ,entryPayloyConversation);
 				console.log("55 routingType: " ,entryPayloyConversation.routingType);
 				if(entryPayloyConversation.routingType == 'Initial') {
 					conversionRouingTypeFlage = true;
@@ -84,7 +84,7 @@
 				// console.log("event.detail.conversationEntry " ,event.detail.conversationEntry);
 				// console.log("event.detail.conversationEntry.entryPayload " ,event.detail.conversationEntry.entryPayload);
 				let entryPayloyConversation = JSON.parse(event.detail.conversationEntry.entryPayload);
-				//console.log("entryPayloyConversation: " ,entryPayloyConversation);
+				console.log("entryPayloyConversation: " ,entryPayloyConversation);
 				console.log("0 entryPayloyConversation.entries[0].operation: " ,entryPayloyConversation.entries[0].operation);
 				console.log("1 participant.appType: " ,entryPayloyConversation.entries[0].participant.appType);
 				if(entryPayloyConversation.entries[0].operation == 'remove' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
