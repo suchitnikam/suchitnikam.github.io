@@ -120,10 +120,12 @@
 						//document.querySelectorAll(".endChatOption")[0].click();
 						endChatFlag = true;
 						endChat();
-						$("#embedded-messaging").on("load", function() {
-						    var iframeContent = $(this).contents().find("#endChatOptionButton-26");
-							console.log('end chat button ==> ', iframeContent);
-						    iframeContent.css("display", ""); // Example modification
+						$(document).ready(function() {
+							$("#embeddedMessagingFrame").on("load", function() {
+							    // var iframeContent = $(this).contents().find("#endChatOptionButton-26");
+								console.log('end chat button ==> ');
+							    // iframeContent.css("display", ""); // Example modification
+							});
 						});
 					}
 					
