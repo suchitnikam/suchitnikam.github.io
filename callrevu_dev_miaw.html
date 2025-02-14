@@ -48,6 +48,11 @@
 				}
 			);
 
+			window.addEventListener("onEmbeddedMessagingConversationStarted", (event2) => {
+				console.log("111 onEmbeddedMessagingConversationStarted... entry", event2);
+				//let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);
+			});
+			
 			let conversionRouingTypeFlage = false;
 			window.addEventListener("onEmbeddedMessagingConversationRouted", (event1) => {
 				console.log("11 onEmbeddedMessagingConversationRouted... entry");
