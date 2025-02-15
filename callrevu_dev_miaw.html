@@ -38,7 +38,14 @@
 			// $(".headerButton").attr("aria-expanded","true");
 				//$(".chatOverlay").css({'display' : '' });
 				// $("#headerMenuButton-26").click();
-			 	 $("#endChatOptionButton-26").click();
+				setInterval(function(){ 
+				   $("#headerMenuButton-26").click();
+				},2000);
+		
+				setInterval(function(){ 
+				   $("#endChatOptionButton-26").click();
+				},2000);
+			 	 
 	//});
 
 		window.addEventListener("onMessagingReady", function() {
@@ -128,7 +135,7 @@
 						//document.querySelectorAll(".endChatOption")[0].click();
 						endChatFlag = true;
 						endChat();
-						window.messagingClient.endConversation();
+						
 					}
 					
 				}
