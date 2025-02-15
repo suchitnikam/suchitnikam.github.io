@@ -49,26 +49,13 @@
 				// if (button) {
 				//   button.click();
 				// }
-				document.addEventListener('DOMContentLoaded', function() {
+				window.addEventListener('DOMContentLoaded', function() {
 					console.log("DOMContentLoaded event listener entry ==> ");
 				  const button = document.querySelector('button#endChatOptionButton-26');
 				  // Your code to interact with the button here
 					console.log("button value ==> ", button);
 				});
 	//});
-
-		window.addEventListener("onMessagingReady", function() {
-			    console.log("MIAW Messaging is ready!");
-			
-			    // Now we can safely end the conversation
-			    if (window.messagingClient && typeof window.messagingClient.endConversation === "function") {
-			        window.messagingClient.endConversation()
-			            .then(() => console.log("Chat session successfully ended."))
-			            .catch((error) => console.error("Error ending chat session:", error));
-			    } else {
-			        console.warn("endConversation is not available.");
-			    }
-			});
 
 	}
 	
