@@ -29,8 +29,8 @@
 		
 		//$(document).ready(function() {
 			console.log("document ready function ==> ");
-	// 		//$('#endChatOptionButton-26').click();
-	// 		//$('.endChatOption').click();
+			$('#endChatOptionButton-26').click();
+			$('.endChatOption').click();
 				// $("headerMenuButton-26").removeAttr("style");
 			// let button = $('#headerMenuButton-26');
 			// button.attr('aria-expanded', 'true');
@@ -58,27 +58,7 @@
 	//});
 
 	}
-	
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-			
-			embeddedservice_bootstrap.init(
-				'00D8B000001Caen',
-				'Support_Enhance',
-				'https://callrevu--chatbotdev.sandbox.my.site.com/ESWSupportEnhance1738239793179',
-				{
-					scrt2URL: 'https://callrevu--chatbotdev.sandbox.my.salesforce-scrt.com'
-				}
-			);
-
-			// window.addEventListener("onEmbeddedMessagingConversationStarted", (event2) => {
-			// 	console.log("111 onEmbeddedMessagingConversationStarted... entry", event2);
-			// 	//let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);conversationId
-			// 	console.log("222 conversationId value ==>", event2.detail.conversationId);
-			// });
-			
-			let conversionRouingTypeFlage = false;
+	let conversionRouingTypeFlage = false;
 			window.addEventListener("onEmbeddedMessagingConversationRouted", (event1) => {
 				console.log("11 onEmbeddedMessagingConversationRouted... entry");
 				let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);
@@ -95,8 +75,8 @@
 			});
 			
 			let flag = false;
-			//-----------
-			let endChatFlag = false;
+
+	let endChatFlag = false;
 			console.log("endChatFlag value ==> ", endChatFlag);
 			// if(endChatFlag == true) {
 			// 	console.log("<== enter endChatFlag if condition ==> ");
@@ -131,23 +111,34 @@
 						//document.querySelectorAll(".endChatOption")[0].click();
 						endChatFlag = true;
 						endChat();
-						
 					}
-					
 				}
-	
-				
-			
 			});
+	
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 			
-			// document.getElementById("endChatOptionButton-26").click();
-			// console.log("flag value ==> " ,flag);
-			// console.log("conversionRouingTypeFlage value ==> " ,conversionRouingTypeFlage);
+			embeddedservice_bootstrap.init(
+				'00D8B000001Caen',
+				'Support_Enhance',
+				'https://callrevu--chatbotdev.sandbox.my.site.com/ESWSupportEnhance1738239793179',
+				{
+					scrt2URL: 'https://callrevu--chatbotdev.sandbox.my.salesforce-scrt.com'
+				}
+			);
+
+			// window.addEventListener("onEmbeddedMessagingConversationStarted", (event2) => {
+			// 	console.log("111 onEmbeddedMessagingConversationStarted... entry", event2);
+			// 	//let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);conversationId
+			// 	console.log("222 conversationId value ==>", event2.detail.conversationId);
+			// });
 			
-			// // need to handle end chat button click operation.
-			// if(flag == true && conversionRouingTypeFlage == true) {
-			// 	console.log("<== if condition entry ==> ");
-			// }
+			
+			//-----------
+			
+			
+			
 			
 			
 		} catch (err) {
