@@ -42,13 +42,19 @@
 				//    $("#headerMenuButton-26").click();
 				// },2000);
 		
-				setInterval(function(){ 
-				   $("#endChatOptionButton-26").click();
-				},2000);
-			 	const button = document.querySelector('button#endChatOptionButton-26');
-				if (button) {
-				  button.click();
-				}
+				// setInterval(function(){ 
+				//    $("#endChatOptionButton-26").click();
+				// },2000);
+			 // 	const button = document.querySelector('button#endChatOptionButton-26');
+				// if (button) {
+				//   button.click();
+				// }
+				document.addEventListener('DOMContentLoaded', function() {
+					console.log("DOMContentLoaded event listener entry ==> ");
+				  const button = document.querySelector('button#endChatOptionButton-26');
+				  // Your code to interact with the button here
+					console.log("button value ==> ", button);
+				});
 	//});
 
 		window.addEventListener("onMessagingReady", function() {
