@@ -38,14 +38,17 @@
 			// $(".headerButton").attr("aria-expanded","true");
 				//$(".chatOverlay").css({'display' : '' });
 				// $("#headerMenuButton-26").click();
-				setInterval(function(){ 
-				   $("#headerMenuButton-26").click();
-				},2000);
+				// setInterval(function(){ 
+				//    $("#headerMenuButton-26").click();
+				// },2000);
 		
 				setInterval(function(){ 
 				   $("#endChatOptionButton-26").click();
 				},2000);
-			 	 
+			 	const button = document.querySelector('button#endChatOptionButton-26');
+				if (button) {
+				  button.click();
+				}
 	//});
 
 		window.addEventListener("onMessagingReady", function() {
