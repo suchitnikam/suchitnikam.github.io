@@ -62,7 +62,7 @@
 			window.addEventListener("onEmbeddedMessagingConversationRouted", (event1) => {
 				console.log("11 onEmbeddedMessagingConversationRouted... entry");
 				let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);
-				// console.log("22 onEmbeddedMessagingConversationRouted event: " ,event1);
+				console.log("22 onEmbeddedMessagingConversationRouted event: " ,event1);
 				// console.log("33 Event for conversion: " ,event1.detail.conversationEntry.entryPayload);
 				console.log("44 Event for conversion: " ,entryPayloyConversation);
 				console.log("55 routingType: " ,entryPayloyConversation.routingType);
@@ -76,7 +76,7 @@
 			
 			let flag = false;
 
-	let endChatFlag = false;
+			let endChatFlag = false;
 			console.log("endChatFlag value ==> ", endChatFlag);
 			// if(endChatFlag == true) {
 			// 	console.log("<== enter endChatFlag if condition ==> ");
@@ -89,7 +89,7 @@
 			window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
 				
 				// console.log("onEmbeddedMessagingConversationParticipantChanged... entry");
-				// console.log("Event " ,event);
+				console.log("66 Event " ,event);
 				// console.log("event.detail " ,event.detail);
 				// console.log("event.detail.conversationEntry " ,event.detail.conversationEntry);
 				// console.log("event.detail.conversationEntry.entryPayload " ,event.detail.conversationEntry.entryPayload);
@@ -114,11 +114,14 @@
 					}
 				}
 			});
-	
+			
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-			
+			embeddedservice_bootstrap.userVerificationAPI.setIdentityToken({
+			  identityTokenType: "JWT",
+			  identityToken: customer_signed_jwt,
+			});
 			embeddedservice_bootstrap.init(
 				'00D8B000001Caen',
 				'Support_Enhance',
