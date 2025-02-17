@@ -13,109 +13,10 @@
 
 		  
 	</style>
-<!-- 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 	</head>
   <body>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type='text/javascript'>
-	function endChat() {
-		console.log("enter window.onload function ==> ");
- //  		//document.getElementById('clickButton').click();
-	// 	// var btn = document.getElementById('endChatOptionText-26');
-	// 	// console.log("button value ==> ", btn);
-	// 	// btn.click;
-
-		
-		//$(document).ready(function() {
-			console.log("document ready function ==> ");
-			$('#endChatOptionButton-26').click();
-			$('.endChatOption').click();
-				// $("headerMenuButton-26").removeAttr("style");
-			// let button = $('#headerMenuButton-26');
-			// button.attr('aria-expanded', 'true');
-			// $(".headerButton").setAttribute("aria-expanded", "true");
-			// $(".headerButton").attr("aria-expanded","true");
-				//$(".chatOverlay").css({'display' : '' });
-				// $("#headerMenuButton-26").click();
-				// setInterval(function(){ 
-				//    $("#headerMenuButton-26").click();
-				// },2000);
-		
-				// setInterval(function(){ 
-				//    $("#endChatOptionButton-26").click();
-				// },2000);
-			 // 	const button = document.querySelector('button#endChatOptionButton-26');
-				// if (button) {
-				//   button.click();
-				// }
-				window.addEventListener('DOMContentLoaded', function() {
-					console.log("DOMContentLoaded event listener entry ==> ");
-				  const button = document.querySelector('button#endChatOptionButton-26');
-				  // Your code to interact with the button here
-					console.log("button value ==> ", button);
-				});
-	//});
-
-	}
-	let conversionRouingTypeFlage = false;
-			window.addEventListener("onEmbeddedMessagingConversationRouted", (event1) => {
-				console.log("11 onEmbeddedMessagingConversationRouted... entry");
-				let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);
-				console.log("22 onEmbeddedMessagingConversationRouted event: " ,event1);
-				console.log("33 event1.currentTarget[endChat] value ==> " ,event1.currentTarget['endChat']);
-				// console.log("33 Event for conversion: " ,event1.detail.conversationEntry.entryPayload);
-				console.log("44 Event for conversion: " ,entryPayloyConversation);
-				console.log("55 routingType: " ,entryPayloyConversation.routingType);
-				if(entryPayloyConversation.routingType == 'Initial') {
-					conversionRouingTypeFlage = true;
-				}
-				else if(entryPayloyConversation.routingType == 'Transfer') {
-					conversionRouingTypeFlage = false;
-				}
-			});
-			
-			let flag = false;
-
-			let endChatFlag = false;
-			console.log("endChatFlag value ==> ", endChatFlag);
-			// if(endChatFlag == true) {
-			// 	console.log("<== enter endChatFlag if condition ==> ");
-			// 	window.onload = function() {
-			// 		console.log("enter window.onload function ==> ");
-  	// 				document.getElementById('clickButton').click();
-			// 	}
-			// }
-			//-----------
-			window.addEventListener("onEmbeddedMessagingConversationParticipantChanged", (event) => {
-				
-				// console.log("onEmbeddedMessagingConversationParticipantChanged... entry");
-				console.log("66 Event " ,event);
-				// console.log("event.detail " ,event.detail);
-				// console.log("event.detail.conversationEntry " ,event.detail.conversationEntry);
-				// console.log("event.detail.conversationEntry.entryPayload " ,event.detail.conversationEntry.entryPayload);
-				let entryPayloyConversation = JSON.parse(event.detail.conversationEntry.entryPayload);
-				console.log("entryPayloyConversation: " ,entryPayloyConversation);
-				console.log("0 entryPayloyConversation.entries[0].operation: " ,entryPayloyConversation.entries[0].operation);
-				console.log("1 participant.appType: " ,entryPayloyConversation.entries[0].participant.appType);
-				if(entryPayloyConversation.entries[0].operation == 'remove' && entryPayloyConversation.entries[0].participant.appType != 'agent') {
-					console.log("2 operation value:  remove");
-					flag = true;
-					console.log("flag value ==> " ,flag);
-					console.log("conversionRouingTypeFlage value ==> " ,conversionRouingTypeFlage);
-					
-					// need to handle end chat button click operation.
-					if(flag == true && conversionRouingTypeFlage == true) {
-						console.log("<== if condition entry ==> ");
-						// var btn = document.getElementById("endChatOptionButton-26");
-						// btn.click();
-						//document.querySelectorAll(".endChatOption")[0].click();
-						endChatFlag = true;
-						endChat();
-					}
-				}
-			});
-			
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
@@ -128,20 +29,6 @@
 					scrt2URL: 'https://callrevu--chatbotdev.sandbox.my.salesforce-scrt.com'
 				}
 			);
-
-			// window.addEventListener("onEmbeddedMessagingConversationStarted", (event2) => {
-			// 	console.log("111 onEmbeddedMessagingConversationStarted... entry", event2);
-			// 	//let entryPayloyConversation = JSON.parse(event1.detail.conversationEntry.entryPayload);conversationId
-			// 	console.log("222 conversationId value ==>", event2.detail.conversationId);
-			// });
-			
-			
-			//-----------
-			
-			
-			
-			
-			
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
