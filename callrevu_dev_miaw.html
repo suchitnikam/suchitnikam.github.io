@@ -34,7 +34,8 @@
 
 	window.addEventListener("onEmbeddedMessagingReady", function () {
 	  embeddedservice_bootstrap.settings.onMessage = function (event) {
-	    const message = event?.data?.message;
+	    const message = event.data.message;
+		  console.log('message' +message);
 	    if (message && message.includes("[REQUEST_FILE_UPLOAD]")) {
 	      document.getElementById("customFileUpload").style.display = "block";
 	    }
