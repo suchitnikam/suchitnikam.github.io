@@ -32,22 +32,11 @@
 		}
 	};
 
-	window.addEventListener("onEmbeddedMessagingReady", function () {
-	  embeddedservice_bootstrap.settings.onMessage = function (event) {
-	    const message = event.data.message;
-		  console.log('message' +message);
-	    if (message && message.includes("[REQUEST_FILE_UPLOAD]")) {
-	      document.getElementById("customFileUpload").style.display = "block";
-	    }
-	  };
-	});
-
 </script>
 <script type='text/javascript' src='https://callrevu--chatbotdev.sandbox.my.site.com/ESWSupportEnhance1738239793179/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 
 
   </body>
-	<input type="file" id="customFileUpload" style="display: none;" />
 
 </html>
